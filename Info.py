@@ -2,14 +2,14 @@ import json,ssl,requests
 
 nome = raw_input('Digite seu Nick :')
 
-inf_jogador = requests.get('https://br.api.pvp.net/api/lol/br/v1.4/summoner/by-name/'+nome+'?api_key=80cf3727-4a7d-4b04-b5e4-3f62cdb47631')
+inf_jogador = requests.get('https://br.api.pvp.net/api/lol/br/v1.4/summoner/by-name/'+nome+'CHAVE API')
 inf = json.loads(inf_jogador.content)
 ###### INFORMAÇOES DO INVOCADOR ############
 id_inv = inf[nome]['id']
 nome_inv = inf[nome]['name']
 lvl = inf[nome]['summonerLevel']  
 ###### INFORMAÇOES DO ELO ############
-inf_elo = requests.get('https://br.api.pvp.net/api/lol/br/v2.5/league/by-summoner/'+str(id_inv)+'/entry?api_key=80cf3727-4a7d-4b04-b5e4-3f62cdb47631')
+inf_elo = requests.get('https://br.api.pvp.net/api/lol/br/v2.5/league/by-summoner/'+str(id_inv)+'/entry?CHAVE API')
 invo_elo = json.loads(inf_elo.content)
 
 
